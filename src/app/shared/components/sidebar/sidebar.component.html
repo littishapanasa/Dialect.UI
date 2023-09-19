@@ -1,0 +1,40 @@
+<div *ngIf="sidebarVisible" class="sidebar bg-white" (click)="$event.stopPropagation()">    <div>
+        <div class="d-flex align-items-center" style="margin-bottom: 28px;">
+            <img src="assets\HeadLogoIcon.svg" alt="logo" class="logo mr-12" draggable="false">
+            <h1 class="Tasc"><b>Tasc</b></h1>  <div class="arrowback" (click)="arrowBack()">
+
+                <img src="assets\leftarrow.svg" alt="arrow" >
+
+            </div>
+        </div>
+        <div class="flex-column d-flex gap-16">
+            <div class="d-flex align-items-center" [class.active]="activeIndex === 0" (click)="setActiveIndex(0)">
+                <img src="assets\DashboardIcon.svg" class="item" draggable="false">
+                <label class="navtext" routerLink="/dashboard">Dashboard</label>
+            </div>
+            <div class="d-flex align-items-center" [class.active]="activeIndex === 1" (click)="setActiveIndex(1)">
+                <img src="assets\ReportIcon.svg" class="item" draggable="false">
+                <label class="navtext" routerLink="/reports">Reports</label>
+            </div>
+            <div class="d-flex align-items-center">
+                <img src="assets\AdminIcon.svg" class="item" draggable="false" [class.active]="activeIndex === 2" (click)="setActiveIndex(2)">
+                <label for="" class="navtext">Admin</label>
+            </div>
+        </div>
+    </div>
+    <div class="flex-column d-flex gap-16">
+        <div class="d-flex align-items-center" >
+            <img src="assets\AccountSettingsIcon.svg" class="item" draggable="false" >
+            <label for="" class="navtext1">Account Settings</label>
+        </div>
+        <div class="d-flex align-items-center" >
+            <img src="assets\LogoutIcon.svg" class="item" draggable="false">
+            <label for="" class="navtext1" routerLink="logout">Logout</label>
+        </div>
+        <div class="d-flex flex-column" >
+            <label for="" class="navtext2 c-b" >{{localUser?.first_name}} {{localUser?.last_name}}</label>
+            <label for="" class="navtext2" >{{localUser?.email}}</label>
+        </div>
+    </div>
+</div>
+<button class="sidebar-toggle" *ngIf="!sidebarVisible" (click)="toggleSidebar()"><img src="assets\menuicon.svg" alt="" draggable="false"></button>

@@ -1,0 +1,156 @@
+:host{
+    display: block;
+    height: 100vh !important;
+}
+.body {
+    /* background-image: url('src\assets\background.svg'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    height: 100vh !important;
+    justify-content: center;
+    align-items: center;
+ }
+ .container1 {
+     width: 100%;
+     min-width: fit-content; /* The element will not be smaller than its content */
+     max-width: 400px; /* Optional: You can set a maximum width for the container */
+     flex-shrink: 0;
+     height: 500px;
+     /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+     box-shadow:  0px 12px 15px 2px rgba(0, 0, 0, 0.25);
+     border-radius: 20px;
+     background-color: white;
+     justify-content: center;
+     margin: 0px !important;
+ }
+ .container2 {
+    width: 100%;
+    min-width: fit-content; /* The element will not be smaller than its content */
+    max-width: 400px; /* Optional: You can set a maximum width for the container */
+    flex-shrink: 0;
+    height: 600px;
+    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+    box-shadow:  0px 12px 15px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    background-color: white;
+    justify-content: center;
+    margin: 0px !important;
+}
+
+ .logo {
+     width: 70%;
+     height: 150px;
+     flex-shrink: 0;
+     border-radius: 2px;
+     margin-left: 15%;
+     background-image: url('src\assets\Loginlogo.svg');
+     background-repeat: no-repeat;
+     background-size: 100% 130px;
+     background-position: center 25px;
+     /* center horizontally and 25px from the top */
+ }
+
+ .input {
+     border: none;
+     /* Remove the default border */
+     border-bottom: 1px solid rgba(0, 0, 0, 0.44);;
+     /* Add the bottom border */
+     outline: none;
+     /* Remove the outline when focused */
+     width: 80%;
+     height: 50px;
+     margin-top: 8%;
+     padding-right: 17%;
+     margin-left: 10%;
+
+ }
+
+ .btn2 {
+     border-radius: 39.901px;
+     background: #2B2B2B;
+     width: 80%;
+     margin-top: 12%;
+     color: aliceblue;
+     height: 50px;
+    margin-left: 10%;
+    border:  1px solid #2B2B2B;
+ }
+
+ .ml{
+    margin-left: 10%;
+ }
+
+ .emailicon {
+
+         background-image: url('src\assets\peopleIcon.svg');
+         background-position: 101%;
+         background-size: 23px;
+         background-repeat: no-repeat;
+ }
+
+ .passwordicon {
+    width: 24px;
+    cursor: pointer;
+    position: absolute;
+    right: 33px; /* Adjust the value based on your design */
+    top: 59%;
+    transform: translateY(-50%);
+  }
+  .alert{
+    max-width:400px !important;
+    height: auto;
+    margin-left: 10%;
+    margin-top: 16px;
+    margin-bottom: 0px !important;
+  }
+  .input {
+    padding-right: 40px; /* Adjust the value to make space for the icon */
+    /* Other input styles */
+  }
+
+ /* .passwordicon {
+
+     background-image: url('src\assets\passwordIcon.svg');
+     background-position: 98%;
+     background-size: 28px;
+     background-repeat: no-repeat;
+ } */
+
+ /* @media (max-width: 500px) {
+     .container {
+         width: 65%;
+         margin-left: 15%;
+     }
+ }
+
+ @media (max-width: 1350px) {
+     .container {
+         width: 55%;
+         margin-left: 20%;
+     }
+ } */
+
+
+
+input::-ms-reveal,
+
+input::-ms-clear {
+  display: none;
+}
+
+input[type="password"]::-webkit-search-cancel-button {
+  display: none;
+}
+.clr{
+    color: #00000070 !important;
+}
+.btn{
+    margin-left: -14% !important;
+    margin-bottom: 8px !important;
+    align-items: end !important;
+    display: flex;
+}
+.mw{
+    max-width: 300px !important;
+}

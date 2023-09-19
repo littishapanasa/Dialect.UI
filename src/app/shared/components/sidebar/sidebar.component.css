@@ -1,0 +1,123 @@
+:host{
+    display: flex;
+}
+.sidebar {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 0.5px solid #D9D9D9;
+    padding: 1rem 1.75rem;
+    width: 280px;
+}
+.logo {
+    width: 34px;
+    height: 34px;
+}
+
+.Tasc {
+    font-size: 36px;
+}
+
+.mr-12{
+    margin-right: 12px;
+}
+
+.gap-16{
+    gap: 25px !important;
+}
+
+.item {
+    width: 20px;
+}
+
+.navtext {
+    font-size: 18px;
+    color:#C2C1C1;
+    /* //font-family: Poppins !important; */
+    font-style: normal;
+    font-weight: 500;
+    margin-left: 7%;
+    cursor:pointer;
+}
+
+.navtext1 {
+    font-size: 18px;
+    color: #324054;
+    /* //font-family: Poppins !important; */
+    font-style: normal;
+    font-weight: 500;
+    margin-left: 7%;
+    cursor:pointer;
+}
+
+.navtext2 {
+    font-size: 13px;
+    color: #71839B;
+    /* //font-family: Poppins !important; */
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 1%;
+    cursor:pointer;
+}
+
+ 
+.sidebar-toggle {
+    display: block;
+
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-gray, #D9D9D9);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+   
+}
+.arrowback{
+    margin-left: 48%;
+    margin-bottom: 25%;
+}
+
+.arrowback img{
+    width: 25px;
+}
+.c-b{
+    color: #4b5769;
+}
+
+/* Add a new class definition for the active item */
+/* Style the active label text color */
+.sidebar .d-flex.align-items-center.active .navtext {
+    color:var(--primary-gray, #324054); /* Set your desired active text color */
+  }
+
+  .sidebar .d-flex.align-items-center .navtext[routerLink="/dashboard"].active,
+.sidebar .d-flex.align-items-center.active .navtext[routerLink="/dashboard"] {
+    color: #324054; /* Set the initial active text color for the Dashboard label */
+}
+
+  
+
+@media(min-width: 800px) {
+    .sidebar-toggle {
+       display: none;
+    }
+    .arrowback{
+        display: none;
+    }
+}
+
+
+@media(max-width:768px) {
+    .sidebar{
+        min-width: fit-content !important;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 0.5px solid #D9D9D9;
+        padding: 1rem 1.75rem;
+    }
+
+}

@@ -1,0 +1,171 @@
+@set baseUrl = https://dialectapi.panasatech.com:8081/api/
+ @set authToken = <>
+
+POST https://dialectapi.panasatech.com:8081/api/user/
+Content-Type: application/json
+
+{
+    "email": "sera@example.com",
+    "password": "Test1@123",
+    "first_name": "Test1",
+    "last_name": "Test1"
+}
+
+###
+
+PUT http://127.0.0.1:8000/api/user/6/
+Content-Type: application/json
+
+{
+    "email": "aro@example.com",
+    "password": "aro",
+    "first_name": "aro",
+    "last_name": "aro1"
+}
+
+###
+DELETE http://127.0.0.1:8000/api/user/<id>
+###
+
+GET https://dialectapi.panasatech.com:8081/api/user/
+
+###
+GET https://dialectapi.panasatech.com:8081/api/userstatus/list/
+###
+GET  https://dialectapi.panasatech.com:8081/api/submissions/list/?next=2
+
+###
+POST http://127.0.0.1:8000/api/user/reset-password/
+Content-Type: application/json
+Authorization: token cb7e1c50858491d777e3903093527b2fd8964dad
+
+{
+    "old_password": "aro",
+    "new_password": "aro6"
+}
+###
+POST https://dialectapi.panasatech.com:8081/api/user_status_update/
+Content-Type: application/json
+
+{
+    "user_id":5,
+    "status": 1
+}
+
+# Event_id is optional in above API endpoint for ready status and mandatory for other statuses.
+# Sample output:
+#
+# status:1(Ready):
+# {
+#     "message": "User status updated successfully",
+#     "data": {
+#         "id": 8,
+#         "status": 1,
+#         "ready_on": "2023-09-02T08:04:21.556793Z",
+#         "user_id": 3
+#     }
+# }
+#
+# status:4(Wrapup)
+# {
+#   "message": "User status updated successfully",
+#   "data": {
+#     "id": 2262,
+#     "event_id": "19452442",
+#     "event_type": "ping",
+#     "data_created_at": "2023-09-01T07:08:10.766666Z",
+#     "wrapup_on": "2023-09-02T09:52:24.874154Z",
+#     "completed_on": null,
+#     "start_on": null,
+#     "is_sent_to_cx_advisor": true,
+#     "is_accepted": 0,
+#     "accept_time_frame": null,
+#     "user_id": 3
+#   }
+# }
+#
+# status:3(Start)
+# {
+#   "message": "User status updated successfully",
+#   "data": {
+#     "id": 2262,
+#     "event_id": "19452442",
+#     "event_type": "ping",
+#     "data_created_at": "2023-09-01T07:08:10.766666Z",
+#     "wrapup_on": "",
+#     "completed_on": null,
+#     "start_on": "2023-09-02T09:56:17.748541Z",
+#     "is_sent_to_cx_advisor": true,
+#     "is_accepted": 0,
+#     "accept_time_frame": null,
+#     "user_id": 3
+#   }
+# }
+#
+# status:8(Complete)
+# {
+#   "message": "User status updated successfully",
+#   "data": {
+#     "id": 2262,
+#     "event_id": "19452442",
+#     "event_type": "ping",
+#     "data_created_at": "2023-09-01T07:08:10.766666Z",
+#     "wrapup_on": "2023-09-02T09:52:24.874154Z",
+#     "completed_on": "2023-09-02T09:58:27.680199Z",
+#     "start_on": "2023-09-02T09:56:17.748541Z",
+#     "is_sent_to_cx_advisor": true,
+#     "is_accepted": 0,
+#     "accept_time_frame": null,
+#     "user_id": 3
+#   }
+# }
+###
+
+GET http://127.0.0.1:8000/api/insertSubmissiomQueue/
+
+# Sample output:
+#
+# {
+#     "message": "Data retrived and mapped",
+#     "submission_instance": {
+#         "id": 2849,
+#         "event_id": "19452475",
+#         "event_type": "ping",
+#         "data_created_at": "2023-09-01T07:10:12.506615+00:00",
+#         "wrapup_on": null,
+#         "completed_on": null,
+#         "start_on": null,
+#         "is_sent_to_cx_advisor": true,
+#         "is_accepted": 0,
+#         "accept_time_frame": null,
+#         "user_id": 5
+#     }
+# }
+
+POST  http://127.0.0.1:8000/api/accept/
+
+{
+    "user_id":5,
+    "is_accepted":1,
+    "event_id":19452475
+}
+
+# Sample output:
+#
+# {
+#     "message": "Data retrived and mapped",
+#     "submission_instance": {
+#         "id": 2850,
+#         "event_id": "19452502",
+#         "event_type": "ping",
+#         "data_created_at": "2023-09-01T07:12:12.322610+00:00",
+#         "wrapup_on": null,
+#         "completed_on": null,
+#         "start_on": null,
+#         "is_sent_to_cx_advisor": true,
+#         "is_accepted": 0,
+#         "accept_time_frame": null,
+#         "user_id": 6
+#     }
+# }
+

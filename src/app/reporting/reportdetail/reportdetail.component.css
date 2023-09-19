@@ -1,0 +1,183 @@
+
+.totaldiv {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%;
+}
+.row {
+    margin-left: 3%;
+    color: var(--base-shade-70, rgba(0, 0, 0, 0.70));
+    font-feature-settings: 'clig' off, 'liga' off;
+    /* font-family: Inter; */
+    font-size: 18px;
+    /* font-style: normal; */
+    font-weight: 500;
+    line-height: 20px;
+    margin-right: 0px !important;
+    
+}
+
+.reportcard {
+    border-radius: 25.783px;
+    background: #FFF;
+    box-shadow: 0px 4.2px 20px 0px rgba(100, 52, 248, 0.15);
+    width: 27%;
+    height: 200px;
+    margin-right: 3%;
+}
+
+.report_item {
+    margin-top: 15px;
+}
+
+.reportimage {
+    height: 42px;
+    width: 42px;
+    margin-top: 20px;
+
+}
+
+.graphdiv {
+    width: 100%;
+    height: 350px;
+    border-radius: 70px;
+    background: #FFF;
+    box-shadow: 0px 4.2px 20px 0px rgba(100, 52, 248, 0.15);
+}
+
+.mat-mdc-card {
+    box-shadow: none;
+}
+
+.spinner-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .value-text {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    top: -40%;
+    transform: translateY(-50%);
+    font-size: 1.2rem; /* Adjust font size as needed */
+  }
+.last-text{
+    position: relative;
+    transform: translateY(-350%);
+}
+
+.example-margin1 {
+    border-radius: 100%;
+    background-color: #E2FBD7; 
+}
+.example-margin2 {
+    border-radius: 100%;
+    background-color: #DAD7FE;
+}
+.example-margin3 {
+    border-radius: 100%;
+    background-color: #dd9664;
+}
+.example-margin4 {
+    border-radius: 100%;
+    background-color: #CCF8FE;
+}
+
+
+:host ::ng-deep .example-margin1  circle{   
+    stroke: #10D4A4;
+}
+:host ::ng-deep .example-margin2  circle{   
+    stroke: #4339F2;
+}
+:host ::ng-deep .example-margin3  circle{   
+    stroke: #FF3A29;
+}
+:host ::ng-deep .example-margin4  circle{   
+    stroke: #34B53A;
+}
+
+
+
+.custom-input {
+    background-image: url('src\assets\ArrowFullDown.svg');
+    background-position: 97%;
+    background-repeat: no-repeat;
+    background-size: 8%;
+    /* Add other styles as needed */
+  }
+  
+  .custom-input {
+    text-align: left;
+  }
+  
+  .big-spinner{
+    margin-left: 3%;
+    margin-top: 2%;
+    box-shadow: 0px 4.2px 20px 0px rgba(100, 52, 248, 0.15);
+    border-radius: 70px;
+    height: 400px;
+}
+
+.spinner-big{
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.text{
+    padding-bottom: 8%;
+    margin-top: 15%;
+    margin-left: 12%;
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.example{
+    margin-right: 5%;
+    margin-top: -.3%;
+    margin-left: .5%;
+}
+
+/* input[type='date']:not(:focus):in-range::-webkit-datetime-edit-year-field,
+  input[type='date']:not(:focus):in-range::-webkit-datetime-edit-month-field,
+  input[type='date']:not(:focus):in-range::-webkit-datetime-edit-day-field,
+  input[type='date']:not(:focus):in-range::-webkit-datetime-edit-text {
+    color: transparent;
+  } */
+
+/* iOS background fix */
+
+
+  .placeholder-label {
+    position: absolute;
+    top: 0.7rem;
+    left: 1rem;
+    color: #aaa;
+    pointer-events: none;
+    z-index: 1;
+    transition: 0.2s ease-out;
+  }
+  
+  .form-control:focus + .placeholder-label,
+  .form-control:valid + .placeholder-label {
+    top: -0.2rem;
+    left: 1rem;
+    font-size: 0.75rem;
+    background-color: white;
+    padding: 0 0.2rem;
+  }
+  
+
+@media (max-width: 500px) {
+    .reportcard {
+      width: 100%;
+    }
+    .example-card {
+        width: 0%;
+    }
+  }

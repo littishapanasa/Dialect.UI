@@ -1,0 +1,57 @@
+
+:host{
+    height: calc(100vh - 110px) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.p-16{
+    padding: 16px !important;
+}
+.outer-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.report_item {
+    background: #FFF;
+    box-shadow: 18.4966504573822021px 17.9933009147644043px 16.979903221130371px 0px rgba(100, 52, 248, 0.15);
+    width: 40%;
+    height: 125px;
+    border-radius: 75px;
+}
+
+.report_item img{
+    height: 42px;
+    width: 42px;
+}
+
+.reportlabel {
+    color: #000;
+    text-align: center;
+    /* font-family: Poppins; */
+    font-size: 24px;
+    font-style: normal;
+    line-height: normal;
+}
+
+.inner-cont{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.rep {
+    margin-top: 4%;
+}
+@media (max-width:810px){
+    .reportlabel{
+        font-size: 16px;
+    }
+    .report_item img{
+        height: 30px;
+        width: 30px;
+    }
+}

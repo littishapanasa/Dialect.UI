@@ -1,0 +1,48 @@
+<body class="body">
+
+    <div [ngClass]="{'container1': !isBadRequest,'container2':isBadRequest}">
+        <div class="logo ">
+        </div>
+        <form *ngIf="loginForm" [formGroup]="loginForm">
+            <div *ngIf="isBadRequest"  class="alert alert-danger input" role="alert">
+                Invalid Credentials. Please check your username and password.
+            </div>
+            <div>
+                <input type="email" class="input emailicon mt-5" id="email" formControlName="username"
+                    placeholder="Email" />
+                <div *ngIf="loginForm.get('username')?.hasError('required') && loginForm.get('username')?.touched"
+                    class="text-danger ml">
+                    Email is required
+                </div>
+                <div *ngIf="loginForm.get('username')?.hasError('pattern') && loginForm.get('username')?.touched"
+                    class="text-danger ml">
+                    Invalid email format
+                </div>
+            </div>
+            <div class="align-items-center">
+                <div class="d-flex" style="position: relative;">
+                    <input [type]="showPassword ? 'text' : 'password'" class="input  mt-3" id="password"
+                        formControlName="password" placeholder="Password" />
+                    <div (click)="PasswordVisibility()">
+                        <img [src]="showPassword ? 'assets/eye.svg' : 'assets/passwordIcon.svg'" alt="Toggle Password"
+                            class="passwordicon" />
+                    </div>
+
+                </div>
+                <div *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched"
+                    class="text-danger ml">
+                    Password is required
+                </div>
+                <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('pattern')"
+                    class="text-danger mw ml">
+                    <small class=""> Password must be of 6 characters, with a capital letter, number, and special
+                        character.</small>
+                </div>
+            </div>
+            <div>
+                <button class="btn2 btn-dark" [disabled]="loginForm.valid?false:true"
+                    (click)="onSubmit()">LOGIN</button>
+            </div>
+        </form>
+    </div>
+</body>

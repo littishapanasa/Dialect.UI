@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-between">
+    <div *ngIf="data?.title" class="title">
+      <label for="" class="titlereport">{{ data.title }}</label>
+    </div>
+    <hr>
+    <div *ngIf="data?.status" class="dropdown w-200 justify-content-end">
+      <button class="btn dropdown-toggle w-200" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+        aria-expanded="false" (click)="toggleDropdown()"  [disabled]="data?.disable">
+        {{ dropdownOpen ? 'Status' : receiveValue }}
+        <img [src]="dropdownOpen ? 'assets/uparrow.svg' : 'assets/downarrow.svg'" alt="Dropdown Arrow" class="dropdown-arrow">
+      </button>
+      <!-- {{dropdownOpen|json}}{{dropdownOpen|json}} -->
+      <ul class="dropdown-menu menu3" aria-labelledby="dropdownMenuButton">
+        <li (click)="selectOption('Ready')">
+          <a class="dropdown-item" [ngClass]="{ 'grey-background': receiveValue === 'Ready' }">Ready</a>
+        </li>
+        <li (click)="selectOption('Not Ready')">
+          <a class="dropdown-item" [ngClass]="{ 'grey-background': receiveValue === 'Not Ready' }">Not Ready</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

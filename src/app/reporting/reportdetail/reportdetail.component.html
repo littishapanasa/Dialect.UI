@@ -1,0 +1,106 @@
+<div class="totaldiv">
+
+    <div class="row mt-5" fxLayout="row" fxLayout.xs="column">
+        <div class="col-12 col-sm-3" ><label for="">From:</label></div>
+        <div class="col-12 col-sm-3"><label for="">To:</label></div>
+      </div>
+      <form action="" [formGroup]="dateForm">
+      <div class="row mt-3" fxLayout="row" fxLayout.xs="column">
+
+          <div class="col-12 col-sm-3">
+            <div class="dropdown ">
+
+              <!-- <label class="placeholder-label" *ngIf="dateForm.get('From')?.value === ''">From</label>             -->
+                <input class="form-control " type="date" placeholder="From" formControlName="From" (change)="updateMinDate()" [max]="maxFromDate" >
+
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-3">
+            <div class="dropdown ">
+              <!-- <label class="placeholder-label"  *ngIf="dateForm.get('To')?.value==''">To</label> -->
+              <input class="form-control" type="date" placeholder="To" formControlName="To" (change)="updateMaxdate()" [min]="minToDate">
+
+            </div>
+          </div>
+
+
+      </div>
+    </form>
+      <div class="row mt-5" fxLayout="row" fxLayout.xs="row" fxLayoutGap="50%">
+        <!-- <div class="col-12 col-sm-4 reportcard">
+          <div class="container report_item">
+            <label for="" class="reportlabel">Report 1</label>
+            <div></div>
+            <img src="assets\reporticon2.svg" alt="" class="reportimage">
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 reportcard">
+          <div class="container report_item">
+            <label for="" class="reportlabel">Report 2</label>
+            <div></div>
+            <img src="assets\reporticon2.svg" alt="" class="reportimage">
+          </div>
+        </div>
+        <div class="col-12 col-sm-4 reportcard">
+          <div class="container report_item">
+            <label for="" class="reportlabel">Report 3</label>
+            <div></div>
+            <img src="assets\reporticon2.svg" alt="" class="reportimage">
+          </div>
+        </div> -->
+      </div>
+      <div class="row">
+        <div class="col-lg-7 col-md-8 col-sm-12 mt-5">
+          <div class="graphdiv">
+
+            <div style="margin-left: 7%;padding-top: 5%;">
+                  <div style="padding-bottom: 3%;">
+                    <Label style="font-size: large;"><b>Title</b></Label>
+                  </div>
+                  <div style="padding-bottom: 5%;display: flex;flex-direction: row;">
+                  <div><div style="height: 15px;width: 15px;border-radius: 100%;background-color: #FFB200;"></div></div> <Label class="example">Accept</Label>
+                  <div><div style="height: 15px;width: 15px;border-radius: 100%;background-color: #4339F2;"></div></div> <Label class="example">Timeout</Label>
+                  <div><div style="height: 15px;width: 15px;border-radius: 100%;background-color: #02A0FC;"></div></div> <Label class="example">Inprogress</Label>
+                  <div><div style="height: 15px;width: 15px;border-radius: 100%;background-color: #FF3A29;"></div></div> <Label class="example">Complete</Label>
+                </div>
+            </div>
+            <div fxLayout="row"  style="display: flex;flex-direction: row;justify-content:space-around;">
+
+                  <div class="spinner-wrapper">
+                    <mat-progress-spinner class="example-margin1" [mode]="mode" [value]="svlData.accepted_percent"></mat-progress-spinner>
+                    <div class="value-text">{{ svlData.accepted_percent| number:"1.2-2" }}%</div>
+                  </div>
+                  <div class="spinner-wrapper">
+                    <mat-progress-spinner class="example-margin2" [mode]="mode" [value]="svlData.expired_submissions"></mat-progress-spinner>
+                    <div class="value-text">{{ svlData.expired_submissions| number:"1.2-2" }}%</div>
+                  </div>
+                  <div class="spinner-wrapper">
+                    <mat-progress-spinner class="example-margin3" [mode]="mode" [value]="svlData.inprogress_submissions"></mat-progress-spinner>
+                    <div class="value-text">{{ svlData.inprogress_submissions | number:"1.2-2"}}%</div>
+                  </div>
+                  <div class="spinner-wrapper">
+                    <mat-progress-spinner class="example-margin4" [mode]="mode" [value]="svlData.completed_submissions"></mat-progress-spinner>
+                    <div class="value-text">{{ svlData.completed_submissions | number:"1.2-2"}}%</div>
+                  </div>
+
+            </div>
+
+
+
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-12 big-spinner ">
+          <div class="text">
+            <label for="">Total</label>
+          </div>
+          <div class="spinner-big">
+            <mat-progress-spinner class="example-margin4" [mode]="mode" [value]="svlData.total_submissions_received" diameter="130"></mat-progress-spinner>
+            <div class="last-text">{{svlData.total_submissions_received | number:"1.2-2"}}%</div>
+          </div>
+        </div>
+      </div>
+
+
+
+</div>

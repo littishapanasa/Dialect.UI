@@ -1,0 +1,16 @@
+<div class="ready">
+  <div class="popup mt-5">
+    <p class="title">{{event?.eventType|uppercase}}</p>
+    <hr>
+    <div>
+      <button type="button" class="inputurl" placeholder="URL" [style.background-color]="inputcolor"
+        #inputField>
+        <a (click)="goToLink('https://client.id-pal.com/submission/{{event?.eventId}}')">https://client.id-pal.com/submission/{{event?.eventId}}</a>
+      </button>
+    </div>
+    <div style="margin-top: 5%;">
+      <button class="btn btnComplete" [style.background-color]="buttonColor"
+        (click)="onComplete()" [disabled]="enableComplete?false:true">COMPLETE</button>
+    </div>
+  </div>
+</div>
