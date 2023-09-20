@@ -1,8 +1,8 @@
 export const environment = {
     production: true,
 
-    // dialectUrl: 'https://dialectapi.panasatech.com:8081/api',
-    dialectUrl: 'http://localhost:8001/api',
+     dialectUrl: 'https://dialectapi.panasatech.com:8081/api',
+    //dialectUrl: 'http://localhost:8001/api',
 
     //dialectUrl :'http://127.0.0.1:8000/api',
     isJiraAccountOn: false,

@@ -68,10 +68,11 @@ export class ReportdetailComponent {
       // "start_date": "2023-09-01 00:00:00",
       var dateFrom=this.dateForm.get('From')?.value
       var dateTo=this.dateForm.get('To')?.value
-      var formatted_from=this.datePipe.transform( dateFrom,'yyyy-MM-dd  h:mm:ss');
-      var formatted_to=this.datePipe.transform( dateTo,'yyyy-MM-dd  h:mm:ss');
+      var formatted_from=this.datePipe.transform(dateFrom,'yyyy-MM-dd h:mm:ss')?.toString()
+      var formatted_to=this.datePipe.transform(dateTo,'yyyy-MM-dd h:mm:ss')?.toString()
       // this.http.post('/submission/statistics/',{"start_date": this.dateForm.get('From')?.value,"end_date": this.dateForm.get('To')?.value}).subscribe(res=>{
-        this.http.post('/submission/statistics/',{"start_date": formatted_from,"end_date": formatted_to}).subscribe(res=>{
+        var data={"start_date": formatted_from,"end_date": formatted_to};
+        this.http.post('/submission/statistics/',data).subscribe(res=>{
         if (res){
           this.svlData=res;  
         }
